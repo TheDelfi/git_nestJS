@@ -20,7 +20,18 @@
 
     <script>
 
-
+        document.getElementById('mainForm').addEventListener('submit',(e)=>{
+            e.preventDefault()
+            const name = document.getElementById('name').value
+            
+            fetch('/myName',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({name})
+            })
+        })
 
 
     </script>

@@ -12,6 +12,6 @@ export class MainPageController {
 
     @Post('myName')
     mayName(@Body() body: {name:string}){
-        console.log(body.name ? 'no_name' : name)
+        console.log(body.name ? body.name : 'no_name')
     }
 }
