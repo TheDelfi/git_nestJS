@@ -1,4 +1,4 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render } from '@nestjs/common';
 
 @Controller('')
 export class MainPageController {
@@ -7,5 +7,11 @@ export class MainPageController {
     @Render('main')
     getMain_Page(){
         return {}
+    }
+
+
+    @Post('myName')
+    mayName(@Body() body: {name:string}){
+        console.log(body.name ? 'no_name' : name)
     }
 }
